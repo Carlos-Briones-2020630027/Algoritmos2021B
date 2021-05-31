@@ -29,7 +29,7 @@ int main(){
     printf("\n");
     printf("Imaginarios\n");
     for(int k=0; k<size; k++){
-        printf("%f\n", ima[k]);
+        printf("%f i\n", ima[k]);
     }
     
     return 0;

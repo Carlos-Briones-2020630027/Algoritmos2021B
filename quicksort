@@ -1,0 +1,69 @@
+-- Haskell
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) =
+    let parteChica = quicksort [a | a <- xs, a <= x]
+        parteGrande  = quicksort [a | a <- xs, a > x]
+    in  parteChica ++ [x] ++ biggerSorted
+    
+-- C
+#include <stdio.h>
+#define size 10
+
+void cambiar(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int partir(int a[], int fst, int lst){
+    int pivot = a[fst];
+    while(1){
+        while(a[fst]<pivot){
+            fst++;
+        }
+        while(a[lst]>pivot){
+            lst--;
+        }
+        if(fst>=lst){
+            return lst;
+        }else{
+            cambiar(&a[fst], &a[lst]);
+            fst++;
+            lst--;
+        }
+    }
+}
+void quickSort(int a[], int fst, int lst){
+    if(fst<lst){
+        int index = partir(a, fst, lst);
+        quickSort(a, fst, index);
+        quickSort(a, index+1, lst);
+    }
+}
+
+
+int main(void){
+    int arrQ[size] = {};
+
+    printf("\nQuickSort, introduzca su lista de 10 enteros ");
+    for(int i=0; i<size;i++){
+        scanf("%i", &arrQ[i]);
+        fflush(stdin);
+        
+    }
+    printf("\nArray desordenado :");
+
+    for(int i=0;i<size;i++){
+        printf("->(%d)",arrQ[i]);
+    }
+
+    quickSort(arrQ, 0,size-1);
+
+    printf("\n");
+    printf("\nArray ordenado :");
+    for(int i=0;i<size;i++){
+        printf("->(%d)",arrQ[i]);
+    }
+
+    return 0;
+}

@@ -6,7 +6,7 @@ quicksort (x:xs) =
         parteGrande  = quicksort [a | a <- xs, a > x]
     in  parteChica ++ [x] ++ biggerSorted
     
--- C
+// C
 #include <stdio.h>
 #define size 10
 

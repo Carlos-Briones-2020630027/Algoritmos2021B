@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-#include<time.h>
 
 #define PIx2 6.2831
 #define size 7

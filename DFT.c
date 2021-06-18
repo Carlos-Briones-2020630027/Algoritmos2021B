@@ -1,4 +1,7 @@
 // intento de DFT
+/*
+Resalto que ocupe la siguiente liga para ayudarme un poco -> https://batchloaf.wordpress.com/2013/12/07/simple-dft-in-c/
+*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
